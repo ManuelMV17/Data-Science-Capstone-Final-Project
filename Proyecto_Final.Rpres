@@ -1,0 +1,42 @@
+Data Science Capstone: Final Project
+========================================================
+author: Manuel M. V.
+date: 10/03/2022
+autosize: true
+
+Problem Statement
+========================================================
+
+The goal of this exercise is to create a product to highlight the prediction algorithm that you have built and to provide an interface that can be accessed by others. For this project you must submit:
+
+- A Shiny app that takes as input a phrase (multiple words) in a text box input and outputs a prediction of the next word.
+
+- A slide deck consisting of no more than 5 slides created with [R Studio Presenter](https://support.rstudio.com/hc/en-us/articles/200486468-Authoring-R-Presentations) pitching your algorithm and app as if you were presenting to your boss or an investor.
+
+
+Getting & Cleaning the Data
+========================================================
+
+- The blog, news and twitter datasets were merged into one and then sampled. 
+- Then the data is cleaned, removing blank spaces, punctuation marks and numbers, and conversion to lowercase letters.
+- The n-grams Quadgram, Trigram and Bigram are created.
+- The count of terms are extracted from the tables of the n-grams and are ordered according to the frequency.
+- And finally, the n-gram objects are saved as R-compressed *.RData* files. 
+
+The Shiny Application
+========================================================
+
+If you haven't tried out the app, go [here](https://manuelmv17.shinyapps.io/Proyecto_Final_2/) to try it!
+
+- Predicts next word as the user types a sentence.
+- Similar to the way most smart phone keyboards are implemented today using the technology of *Swiftkey*.
+
+Notes
+========================================================
+
+- All codes used and the *.RData* files are available in my [github](https://github.com/ManuelMV17/Data-Science-Capstone-Final-Project).
+- The data sets (blogs, news, twitter) used are available [here](https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip).
+- Further work can expand the main weakness of this approach: long-range context
+    1. Current algorithm discards contextual information past 4-grams.
+    2. We can incorporate this into future work through clustering underlying training corpus/data and predicting what cluster the entire sentence would fall into.
+    3. This allows us to predict using only the data subset that fits the long-range context of the sentence, while still preserving the performance characteristics of an n-gram model.
